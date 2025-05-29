@@ -13,6 +13,7 @@ body{
   display:flex;
   justify-content: space-between;
   padding:10px;
+  background-color: rgb(63, 63, 117);
 
 }
 
@@ -49,4 +50,14 @@ display:flex;
 
 .title{
   font-size:1rem;
+}
+
+.bannersection{
+  margin:10px 0px;
+}
+
+.bannerbox img{
+
+  width:100%;
+
 }
