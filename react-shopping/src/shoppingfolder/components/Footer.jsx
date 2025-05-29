@@ -2,7 +2,11 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div className='footerSection'>
+       <div className="bannerbox">
+         <img src="assets/footer.png" alt="banner"></img>
+      </div>
+    </div>
   )
 }
 
