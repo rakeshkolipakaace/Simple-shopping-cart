@@ -9,7 +9,7 @@ const App = () => {
    <div>
     
     <Mainpage/>
-    </div> src/App.jsx
+    </div> 
    </>
   )
 }
