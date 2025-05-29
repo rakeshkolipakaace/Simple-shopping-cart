@@ -7,7 +7,7 @@ const App = () => {
    <>
    
    <div>
-    <h1>React-Shopping</h1>
+    
     <Mainpage/>
     </div>
    </>
