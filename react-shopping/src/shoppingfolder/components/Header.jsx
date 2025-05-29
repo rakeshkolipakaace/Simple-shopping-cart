@@ -3,7 +3,8 @@ import React from 'react'
 const Header = () => {
   return (
    <>
-
+<div className='headerSection'>
+    
     <div className="left">
         <div className="title"><h2>Shopping Mall</h2></div>
     </div>
@@ -19,9 +20,10 @@ const Header = () => {
         <input type="text" placeholder='serach'></input>
     </div>
     <div className="right">
-        <div className="sign">Sign In/Signup</div>
+        <div className="sign">Sign In / Signup</div>
         <div className="cart">Cart</div>
     </div>
+</div>
    </>
   )
 }
