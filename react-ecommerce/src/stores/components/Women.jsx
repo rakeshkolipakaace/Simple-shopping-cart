@@ -1,12 +1,12 @@
 import React from 'react'
 
-import {mobileData} from '../data/mobiles'
+import {womanData} from '../data/woman'
 
 const Mobiles = () => {
-    const firstfiveimages=mobileData.slice(0,5)
+    const firstfiveimages=womanData.slice(0,5)
   return (
    <>
-   <h2>Mobiles</h2>
+   <h2>Women wears</h2>
     <div className='prosection'>
         {firstfiveimages.map((item)=>{
             return(
