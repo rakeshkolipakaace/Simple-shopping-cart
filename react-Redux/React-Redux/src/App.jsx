@@ -1,7 +1,8 @@
+import Home from "./Components/Home";
 function App() {
   return (
     <>
-      <h1 className="text-center text-primary">Hello, React-Redux!</h1>
+      <Home />
     </>
   );
 }
