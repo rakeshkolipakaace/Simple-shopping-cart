@@ -1,13 +1,14 @@
 import React from "react";
+import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             Navbar
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -22,14 +23,14 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <NavLink end className="nav-link" aria-current="page" to="/">
                   Home
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
+                <NavLink className="nav-link" to="/about">
+                  About
+                </NavLink>
               </li>
               <li className="nav-item dropdown">
                 <a
@@ -43,22 +44,16 @@ const Header = () => {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Action
-                    </a>
+                    <span className="dropdown-item">Action</span>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
-                    </a>
+                    <span className="dropdown-item">Another action</span>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
+                    <span className="dropdown-item">Something else here</span>
                   </li>
                 </ul>
               </li>
