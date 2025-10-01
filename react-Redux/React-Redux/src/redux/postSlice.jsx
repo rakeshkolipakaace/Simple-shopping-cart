@@ -1,3 +1,6 @@
+import { createSlice } from "@reduxjs/toolkit"
+
+
 const initialState = [
     {
         id: 1,
@@ -13,12 +16,17 @@ const initialState = [
         id: 3,
         title: "Post 3",
         content: "Content 3"
+    },
+    {
+        id: 4,
+        title: "Post 4",
+        content: "Content 4"
     }
 ]
 
 const postSlice = createSlice({
     name: "post",
-    initialState:any,
+    initialState,
     reducers: {    }
 })
 
