@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import {v4 as uuidv4} from 'uuid';
 
 const Post = () => {
     const posts = useSelector((state) => state.posts);
@@ -11,7 +12,6 @@ const Post = () => {
     const handleSubmit=(e)=>{
         e.preventDefault();
         console.log(formData);
-        // setFormData({title:'',content:''});
   }
   return (
     // <div className="container py-4">
