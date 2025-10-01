@@ -59,7 +59,11 @@ const postslice=createSlice({
     name:'post',
     initialState,
     reducers:{
+        addPost:(state,action)=>{
+            state.push(action.payload);
+        }
 
     }
 })
+export const {addPost}=postslice.actions;
 export default postslice.reducer
