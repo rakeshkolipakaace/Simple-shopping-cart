@@ -1,17 +1,22 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
 import {v4 as uuidv4} from 'uuid';
+import { addPost } from '../redux/postSlice';
 
 const Post = () => {
     const posts = useSelector((state) => state.posts);
     const [formData,setFormData]=useState({title:'',content:''});
-
+    const dispatch=useDispatch();
     const handleChange=(e)=>{
         setFormData({...formData,[e.target.name]:e.target.value});
     }
     const handleSubmit=(e)=>{
         e.preventDefault();
-        console.log(formData);
+        // console.log(formData);
+        const newPost={id:uuidv4(),...formData};
+        console.log(newPost);
+        dispatch(addPost(newPost));
+        setFormData({title:'',content:''});
   }
   return (
     // <div className="container py-4">
