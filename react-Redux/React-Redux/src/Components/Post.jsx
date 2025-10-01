@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import {v4 as uuidv4} from 'uuid';
-import { addPost } from '../redux/postSlice';
+import { addPost,deletePost } from '../redux/postSlice';
 
 const Post = () => {
     const posts = useSelector((state) => state.posts);
@@ -17,7 +17,12 @@ const Post = () => {
         console.log(newPost);
         dispatch(addPost(newPost));
         setFormData({title:'',content:''});
+        
   }
+  const handleDelete=(id)=>{
+    // console.log(id);
+    dispatch(deletePost(id));
+  }   
   return (
     // <div className="container py-4">
     //   <h1 className="mb-3">Posts</h1>
@@ -56,6 +61,7 @@ const Post = () => {
 						<li key={post.id} className='alert alert-info'>
 							{post.title}
 							<p>{post.content}</p>
+              <button onClick={()=>handleDelete(post.id)} className='btn btn-danger'>Delete</button>
 						</li>
 					))}
 				</ul>
