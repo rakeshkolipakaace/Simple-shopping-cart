@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
 const Post = () => {
-    const posts = useSelector((state) => state.posts)
+    const posts = useSelector((state) => state.posts);
+    const [formData,setFormData]=useState({title:'',content:''});
+
+    const handleChange=(e)=>{
+        setFormData({...formData,[e.target.name]:e.target.value});
+    }
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        console.log(formData);
+        // setFormData({title:'',content:''});
+  }
   return (
     // <div className="container py-4">
     //   <h1 className="mb-3">Posts</h1>
@@ -18,35 +28,35 @@ const Post = () => {
 
     <>
    
-    <section className='container py-5'>
-      <div className='row'>
-        <div className='col-md-6'>
-          <h1>Add Post</h1>
-          <form>
-            <div className='form-group'>
-              <label htmlFor='title'>Title</label>
-              <input type='text' className='form-control' id='title' />
-            </div>
-          </form>
-          <div className='form-group'>
-            <label htmlFor='content'>Content</label>
-            <textarea className='form-control' id='content' />
-          </div>
-          <button className='btn btn-primary'>Add Post</button>
-
-        </div>
-      </div>
-      <div className='col-md-6'>
-        <h1>Posts</h1>
-        <ul>
-          {posts.map((post) => (
-            <li key={post.id}>{post.title}
-            <p>{post.content}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+	<section className='container py-5'>
+		<div className='row'>
+			<div className='col-md-6'>
+				<h1>Add Post</h1>
+				<form onSubmit={handleSubmit}>
+					<div className='form-group'>
+						<label htmlFor='title'>Title</label>
+						<input type='text' className='form-control' id='title' name='title' value={formData.title} onChange={handleChange} />
+					</div>
+					<div className='form-group mt-3'>
+						<label htmlFor='content'>Content</label>
+						<textarea className='form-control' id='content' name='content' value={formData.content} onChange={handleChange} />
+					</div>
+				<button className='btn btn-primary mt-3' type='submit'>Add Post</button>
+				</form>
+			</div>
+			<div className='col-md-6'>
+				<h1>Posts</h1>
+				<ul>
+					{posts.map((post) => (
+						<li key={post.id} className='alert alert-info'>
+							{post.title}
+							<p>{post.content}</p>
+						</li>
+					))}
+				</ul>
+			</div>
+		</div>
+	</section>
     
     
     
